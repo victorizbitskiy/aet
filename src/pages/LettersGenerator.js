@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import {constants} from '../constants/constants';
 
 export const LettersGenerator = () => {
   const [letters, setLetters] = useState(' ')
@@ -55,7 +56,7 @@ export const LettersGenerator = () => {
         <Button
           onPress={onGenBtnPress}
           title="Генерировать"
-          color="#841584"
+          color={constants.THEME_COLOR}
         />
       </View>
     </View>

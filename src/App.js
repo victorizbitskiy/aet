@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LettersGenerator } from './pages/LettersGenerator';
+import {constants} from './constants/constants';
 
 function Feed() {
   return (
@@ -17,7 +18,7 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
     <Drawer.Navigator useLegacyImplementation>
-      <Drawer.Screen name="Feed" component={Feed} options={styles.screenOptions} />
+      {/* <Drawer.Screen name="Feed" component={Feed} options={styles.screenOptions} /> */}
       <Drawer.Screen name="Letters Generator" component={LettersGenerator} options={styles.screenOptions} />
     </Drawer.Navigator>
   );
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   screenOptions: {
     // title: 'My home',
     headerStyle: {
-      backgroundColor: '#841584',
+      backgroundColor: constants.THEME_COLOR,
     },
     labelStyle: {
       fontFamily: 'SomeFont',
