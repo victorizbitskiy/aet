@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import {constants} from '../constants/constants';
+import { View, Text, Button, StyleSheet, TextInput} from 'react-native';
+import { constants } from '../constants/constants';
 
 export const LettersGenerator = () => {
   const [letters, setLetters] = useState(' ')
+  const [numberOfLetters, setNumberOfLetters] = useState(9)
+  const [numberOfGroups, setNumberOfGroups] = useState(1)
 
   const getOptions = () => {
     const russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
     const english = 'abcdefghijklmnopqrstuvwxyz'
     const language = 'en' //$('input[name=language]:checked').val()
-    const letterCount = 9 //parseInt($('#letterCount').val())
-    const groupsCount = 1 //parseInt($('#groupsCount').val())
+    const letterCount = numberOfLetters //parseInt($('#letterCount').val())
+    const groupsCount = numberOfGroups //parseInt($('#groupsCount').val())
 
     if (isNaN(letterCount)) {
       letterCount = 1;
@@ -49,15 +51,35 @@ export const LettersGenerator = () => {
 
   return (
     <View style={styles.mainView}>
-      <View style={styles.viewLetters}>
+      <View style={styles.lettersView}>
         <Text style={styles.letters}>{letters}</Text>
       </View>
-      <View style={styles.viewGenButton}>
+      <View style={styles.genButtonView}>
         <Button
           onPress={onGenBtnPress}
-          title="Генерировать"
+          title="Generate"
           color={constants.THEME_COLOR}
         />
+      </View>
+      <View style={styles.settingsView}>
+        <View>
+          <Text style={styles.inputTitel}>Number of letters</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setNumberOfLetters}
+            value={numberOfLetters}
+            keyboardType="numeric"
+          />
+        </View>
+        <View>
+          <Text style={styles.inputTitel}>Number of groups</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setNumberOfGroups}
+            value={numberOfGroups}
+            keyboardType="numeric"
+          />
+        </View>
       </View>
     </View>
   );
@@ -69,19 +91,40 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  viewLetters: {
+  lettersView: {
     padding: 15,
-    // borderWidth: 1,
-    // borderColor: 'black', 
     height: '15%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   letters: {
-    fontSize: 32
+    fontSize: 32,
+    // flex: 1,
+    alignContent: 'space-around'
   },
-  viewGenButton: {
+  genButtonView: {
     padding: 15,
+    width: "50%",
+    margin: 10,
   },
+  inputTitel: {
+    fontSize: 16,
+    fontWeight: "bold",
+    margin: 5,
+  },
+  input: {
+    selectionColor: constants.THEME_COLOR,
+    padding: 5,
+    fontSize: 26,
+    width: "50%",
+    margin: 5,
+    borderWidth: 1,
+  },
+  settingsView: {
+    flex: 1,
+    flexDirection: 'columt',
+    justifyContent: 'flex-start'
+  },
+
 })
