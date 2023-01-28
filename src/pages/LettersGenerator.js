@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput} from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { constants } from '../constants/constants';
 
 export const LettersGenerator = () => {
   const [letters, setLetters] = useState(' ')
   const [numberOfLetters, setNumberOfLetters] = useState(9)
-  const [numberOfGroups, setNumberOfGroups] = useState(1)
+  const [numberOfGroups, setNumberOfGroups] = useState(5)
 
   const getOptions = () => {
     const russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
@@ -54,16 +54,9 @@ export const LettersGenerator = () => {
       <View style={styles.lettersView}>
         <Text style={styles.letters}>{letters}</Text>
       </View>
-      <View style={styles.genButtonView}>
-        <Button
-          onPress={onGenBtnPress}
-          title="Generate"
-          color={constants.THEME_COLOR}
-        />
-      </View>
       <View style={styles.settingsView}>
         <View>
-          <Text style={styles.inputTitel}>Number of letters</Text>
+          <Text style={styles.inputTitle}>Number of letters</Text>
           <TextInput
             style={styles.input}
             onChangeText={setNumberOfLetters}
@@ -72,7 +65,7 @@ export const LettersGenerator = () => {
           />
         </View>
         <View>
-          <Text style={styles.inputTitel}>Number of groups</Text>
+          <Text style={styles.inputTitle}>Number of groups</Text>
           <TextInput
             style={styles.input}
             onChangeText={setNumberOfGroups}
@@ -80,6 +73,13 @@ export const LettersGenerator = () => {
             keyboardType="numeric"
           />
         </View>
+      </View>
+      <View style={styles.genButtonView}>
+        <Button
+          onPress={onGenBtnPress}
+          title="Generate"
+          color={constants.THEME_COLOR}
+        />
       </View>
     </View>
   );
@@ -90,25 +90,34 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
+    flexDirection: 'column',
   },
   lettersView: {
+    flex: 1,
+    justifyContent: 'flex-start',
     padding: 15,
     height: '15%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    flexGrow: 1,
   },
   letters: {
+    flex: 1,
+    justifyContent: 'center',
     fontSize: 32,
-    // flex: 1,
-    alignContent: 'space-around'
+    flexWrap: 'wrap',
+    flexGrow: 1,
   },
   genButtonView: {
     padding: 15,
     width: "50%",
     margin: 10,
+    justifyContent: 'center',
   },
-  inputTitel: {
+  inputTitle: {
     fontSize: 16,
     fontWeight: "bold",
     margin: 5,
