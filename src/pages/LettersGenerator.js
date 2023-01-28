@@ -55,7 +55,7 @@ export const LettersGenerator = () => {
         <Text style={styles.letters}>{letters}</Text>
       </View>
       <View style={styles.settingsView}>
-        <View>
+        <View style={styles.inputView}>
           <Text style={styles.inputTitle}>Number of letters</Text>
           <TextInput
             style={styles.input}
@@ -64,7 +64,7 @@ export const LettersGenerator = () => {
             keyboardType="numeric"
           />
         </View>
-        <View>
+        <View style={styles.inputView}>
           <Text style={styles.inputTitle}>Number of groups</Text>
           <TextInput
             style={styles.input}
@@ -117,6 +117,9 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: 'center',
   },
+  inputView: {
+    alignItems: 'center'
+  },
   inputTitle: {
     fontSize: 16,
     fontWeight: "bold",
@@ -129,11 +132,12 @@ const styles = StyleSheet.create({
     width: "50%",
     margin: 5,
     borderWidth: 1,
+    alignItems: 'center'
   },
   settingsView: {
     flex: 1,
     flexDirection: 'columt',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   },
-
 })
