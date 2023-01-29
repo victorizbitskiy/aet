@@ -3,9 +3,9 @@ import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { constants } from '../constants/constants';
 
 export const LettersGenerator = () => {
-  const [letters, setLetters] = useState(' ')
+  const [letters, setLetters] = useState('')
   const [numberOfLetters, setNumberOfLetters] = useState(9)
-  const [numberOfGroups, setNumberOfGroups] = useState(5)
+  const [numberOfGroups, setNumberOfGroups] = useState(26)
 
   const getOptions = () => {
     const russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
@@ -52,9 +52,15 @@ export const LettersGenerator = () => {
   return (
     <View style={styles.mainView}>
       <View style={styles.lettersView}>
-        <Text style={styles.letters}>{letters}</Text>
+        {letters
+          ?
+          <Text style={styles.letters}>{letters}</Text>
+          :
+          <Text style={styles.lettersPlaceholder}>{'Please, press the Generate button'}</Text>
+        }
+
       </View>
-      <View style={styles.settingsView}>
+      {/* <View style={styles.settingsView}>
         <View style={styles.inputView}>
           <Text style={styles.inputTitle}>Number of letters</Text>
           <TextInput
@@ -73,7 +79,7 @@ export const LettersGenerator = () => {
             keyboardType="numeric"
           />
         </View>
-      </View>
+      </View> */}
       <View style={styles.genButtonView}>
         <Button
           onPress={onGenBtnPress}
@@ -88,56 +94,59 @@ export const LettersGenerator = () => {
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
-    justifyContent: 'flex-start',
     alignItems: 'center',
-    flexDirection: 'column',
   },
   lettersView: {
     flex: 1,
-    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+    flexShrink: 1,
     padding: 15,
     height: '15%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    flexGrow: 1,
   },
   letters: {
     flex: 1,
     justifyContent: 'center',
     fontSize: 32,
     flexWrap: 'wrap',
-    flexGrow: 1,
+    flexShrink: 1,
+    height: '10%',
+    overflow: 'scroll',
+    padding: 10
   },
+  lettersPlaceholder: {
+    color: 'gray'
+  },
+  // inputView: {
+  //   alignItems: 'center'
+  // },
+  // inputTitle: {
+  //   fontSize: 16,
+  //   fontWeight: "bold",
+  //   margin: 5,
+  // },
+  // input: {
+  //   selectionColor: constants.THEME_COLOR,
+  //   padding: 5,
+  //   fontSize: 26,
+  //   width: "10%",
+  //   margin: 5,
+  //   borderWidth: 1,
+  //   alignItems: 'center'
+  // },
+  // settingsView: {
+  //   flex: 1,
+  //   flexDirection: 'columt',
+  //   justifyContent: 'flex-start',
+  //   alignItems: 'center'
+  // },
   genButtonView: {
+    flex: 1,
     padding: 15,
     width: "50%",
     margin: 10,
     justifyContent: 'center',
-  },
-  inputView: {
-    alignItems: 'center'
-  },
-  inputTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    margin: 5,
-  },
-  input: {
-    selectionColor: constants.THEME_COLOR,
-    padding: 5,
-    fontSize: 26,
-    width: "50%",
-    margin: 5,
-    borderWidth: 1,
-    alignItems: 'center'
-  },
-  settingsView: {
-    flex: 1,
-    flexDirection: 'columt',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
   },
 })
