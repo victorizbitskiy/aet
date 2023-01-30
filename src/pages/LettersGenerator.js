@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Pressable, ScrollView } from 'react-native';
 import { constants } from '../constants/constants';
 
 export const LettersGenerator = () => {
   const [letters, setLetters] = useState('')
   const [numberOfLetters, setNumberOfLetters] = useState(9)
-  const [numberOfGroups, setNumberOfGroups] = useState(26)
+  const [numberOfGroups, setNumberOfGroups] = useState(1)
 
   const getOptions = () => {
     const russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
@@ -54,7 +54,11 @@ export const LettersGenerator = () => {
       <View style={styles.lettersView}>
         {letters
           ?
-          <Text style={styles.letters}>{letters}</Text>
+          <ScrollView contentContainerStyle={{ alignItems: 'center'}} style={{width: '100%'}} >
+            <View>
+              <Text style={styles.letters}>{letters}</Text>
+            </View>
+          </ScrollView>
           :
           <Text style={styles.lettersPlaceholder}>{'Please, press the Generate button'}</Text>
         }
@@ -97,7 +101,6 @@ const styles = StyleSheet.create({
   lettersView: {
     flex: 1,
     flexWrap: 'wrap',
-    flexShrink: 1,
     padding: 15,
     height: '15%',
     width: '100%',
@@ -106,12 +109,14 @@ const styles = StyleSheet.create({
   },
   letters: {
     flex: 1,
-    justifyContent: 'center',
-    fontSize: 32,
     flexWrap: 'wrap',
     flexShrink: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 32,
     height: '10%',
-    overflow: 'scroll',
+    // overflow: 'scroll',
     padding: 10
   },
   lettersPlaceholder: {
@@ -119,27 +124,32 @@ const styles = StyleSheet.create({
   },
   settingsView: {
     flex: 1,
-    flexDirection: 'columt',
-    justifyContent: 'flex-start',
+    // flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
     // borderWidth: 1,
     // borderColor: 'black',
   },
   inputView: {
-    alignItems: 'center'
+    alignItems: 'center',
+    // borderWidth: 1,
+    // borderColor: 'gray',
+    width: '50%',
   },
   inputTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    margin: 5,
+    // margin: 5,
+    paddingBottom: 5,
   },
   input: {
-    selectionColor: constants.THEME_COLOR,
-    padding: 5,
+    // padding: 5,
     fontSize: 26,
     width: "15%",
-    margin: 5,
+    // margin: 5,
     borderWidth: 1,
+    borderColor: 'gray',
     alignItems: 'center'
   },
   genButtonView: {
@@ -148,7 +158,7 @@ const styles = StyleSheet.create({
     width: "100%",
     margin: 10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   genButton: {
     alignItems: 'center',
