@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
 import { constants } from '../constants/constants';
 
 export const LettersGenerator = () => {
@@ -60,7 +60,7 @@ export const LettersGenerator = () => {
         }
 
       </View>
-      {/* <View style={styles.settingsView}>
+      <View style={styles.settingsView}>
         <View style={styles.inputView}>
           <Text style={styles.inputTitle}>Number of letters</Text>
           <TextInput
@@ -79,13 +79,11 @@ export const LettersGenerator = () => {
             keyboardType="numeric"
           />
         </View>
-      </View> */}
+      </View>
       <View style={styles.genButtonView}>
-        <Button
-          onPress={onGenBtnPress}
-          title="Generate"
-          color={constants.THEME_COLOR}
-        />
+        <Pressable style={styles.genButton} onPress={onGenBtnPress} >
+          <Text style={styles.genButtonText}>Generate</Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -119,34 +117,51 @@ const styles = StyleSheet.create({
   lettersPlaceholder: {
     color: 'gray'
   },
-  // inputView: {
-  //   alignItems: 'center'
-  // },
-  // inputTitle: {
-  //   fontSize: 16,
-  //   fontWeight: "bold",
-  //   margin: 5,
-  // },
-  // input: {
-  //   selectionColor: constants.THEME_COLOR,
-  //   padding: 5,
-  //   fontSize: 26,
-  //   width: "10%",
-  //   margin: 5,
-  //   borderWidth: 1,
-  //   alignItems: 'center'
-  // },
-  // settingsView: {
-  //   flex: 1,
-  //   flexDirection: 'columt',
-  //   justifyContent: 'flex-start',
-  //   alignItems: 'center'
-  // },
+  settingsView: {
+    flex: 1,
+    flexDirection: 'columt',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    // borderWidth: 1,
+    // borderColor: 'black',
+  },
+  inputView: {
+    alignItems: 'center'
+  },
+  inputTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    margin: 5,
+  },
+  input: {
+    selectionColor: constants.THEME_COLOR,
+    padding: 5,
+    fontSize: 26,
+    width: "15%",
+    margin: 5,
+    borderWidth: 1,
+    alignItems: 'center'
+  },
   genButtonView: {
     flex: 1,
     padding: 15,
-    width: "50%",
+    width: "100%",
     margin: 10,
     justifyContent: 'center',
+    alignItems: 'center'
   },
+  genButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    backgroundColor: constants.THEME_COLOR,
+    borderRadius: 4,
+    width: '50%'
+  },
+  genButtonText: {
+    fontSize: 16,
+    color: 'white',
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+  }
 })
