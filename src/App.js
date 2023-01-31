@@ -1,24 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { LettersGenerator } from './pages/LettersGenerator';
+import { LettersGenerator } from './modules/lettersGenerator/LettersGenerator';
+import { CoinFlip } from './modules/coinFlip/CoinFlip';
 import {constants} from './constants/constants';
-
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed Screen</Text>
-    </View>
-  );
-}
 
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
     <Drawer.Navigator useLegacyImplementation>
-      {/* <Drawer.Screen name="Feed" component={Feed} options={styles.screenOptions} /> */}
+      <Drawer.Screen name="Coin Flip" component={CoinFlip} options={styles.screenOptions} />
       <Drawer.Screen name="Letters Generator" component={LettersGenerator} options={styles.screenOptions} />
     </Drawer.Navigator>
   );
@@ -34,7 +27,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screenOptions: {
-    // title: 'My home',
     headerStyle: {
       backgroundColor: constants.THEME_COLOR,
     },
