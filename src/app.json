@@ -4,6 +4,7 @@
     "slug": "elgb",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "elgb",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
