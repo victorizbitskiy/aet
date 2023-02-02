@@ -1,6 +1,6 @@
 # An application for an English teacher
 
-This is a mobile app, that I created just when played with React Native. 
+This is a mobile app, that I created just for fun when played with React Native. 
 
 ## Motivation
 
