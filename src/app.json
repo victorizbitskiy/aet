@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "elgb",
-    "slug": "elgb",
+    "name": "aet",
+    "slug": "aet",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "elgb",
+    "scheme": "aet",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
