@@ -1,4 +1,4 @@
-# English learning game box  
+# An application for an English teacher
 
 This is a mobile app, that I created just when played with React Native. 
 
