@@ -5,17 +5,23 @@ This is a mobile app, that I created just for fun when played with React Native.
 
 TODO
 
-## Installation
+<img src="https://github.com/victorizbitskiy/elgb/blob/main/docs/img/Coin%20Flip.png"/>
 
-To run it, type:
+## How to run it?
+
+Clone it:
+```
+git clone https://github.com/victorizbitskiy/elgb
+```
+Install dependencies:
 ```
 $ npm install
 ```
-then
+Then run it and then press `w`:
 ```
 $ expo start
 ```
 
-and then press `w`.
+
 
 
