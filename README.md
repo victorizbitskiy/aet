@@ -5,7 +5,8 @@ This is a mobile app, that I created just when played with React Native.
 ## Motivation
 
 In English classes, we often need to get a random set of letters to make words out of them. Every time searching the Internet for such an application is tiring. So the idea came up to create a mobile application that will always be at hand.  
-Later, I also added the Coin Flip mini app.
+Later, I also added the Coin Flip mini app. It can be useful to find out who will be the first to answer the teacher's question 😅
+As you can see, this application can be useful for your English teacher.
 
 ## How it looks?
 
