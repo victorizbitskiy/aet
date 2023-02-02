@@ -24,7 +24,7 @@ There are two mini apps:
 
 Coin Flip looks like this:  
 
-<img src="https://github.com/victorizbitskiy/elgb/blob/main/docs/img/Coin%20flip.gif"/>  
+<img src="https://github.com/victorizbitskiy/aet/blob/main/docs/img/Coin%20flip.gif"/>  
 
 There are 12 GIFs that are shown randomly.  
 To determine how long the animation takes, the [gifs.json](https://github.com/victorizbitskiy/elgb/blob/main/src/modules/coinFlip/gifs/gifs.json) file is used.
@@ -33,7 +33,7 @@ To determine how long the animation takes, the [gifs.json](https://github.com/vi
 
 Letters generator looks like this:  
 
-<img src="https://github.com/victorizbitskiy/elgb/blob/main/docs/img/Letters%20generator.gif"/>  
+<img src="https://github.com/victorizbitskiy/aet/blob/main/docs/img/Letters%20generator.gif"/>  
 
 Here we can set the number of letters and the number of groups.
 
@@ -41,7 +41,7 @@ Here we can set the number of letters and the number of groups.
 
 Clone it:
 ```
-git clone https://github.com/victorizbitskiy/elgb
+git clone https://github.com/victorizbitskiy/aet
 ```
 Install dependencies:
 ```
