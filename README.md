@@ -8,6 +8,12 @@ In English classes, we often need to get a random set of letters to make words o
 Later, I also added the Coin Flip mini app. It can be useful to find out who will be the first to answer the teacher's question 😅.
 As you can see, this application can be very helpful for your English teacher 😇.
 
+---
+
+<p align="center">Don't forget to click ⭐ if you like the project!<p>
+
+---
+
 ## How it looks?
 
 There are two mini apps:  
