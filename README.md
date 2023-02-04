@@ -41,7 +41,7 @@ Here we can set the number of letters and the number of groups.
 
 Clone it:
 ```
-git clone https://github.com/victorizbitskiy/aet
+$ git clone https://github.com/victorizbitskiy/aet
 ```
 Install dependencies:
 ```
