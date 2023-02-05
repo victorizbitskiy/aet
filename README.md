@@ -41,7 +41,7 @@ Here we can set the number of letters and the number of groups.
 
 Clone it:
 ```
-git clone https://github.com/victorizbitskiy/aet
+$ git clone https://github.com/victorizbitskiy/aet
 ```
 Install dependencies:
 ```
@@ -52,6 +52,26 @@ Then run it and then press `w`:
 $ expo start
 ```
 
+## Possible Errors
+
+If you have such an error when starting the application:  
+
+<details>
+<base target="_blank">
+<summary>error</summary>
+<img src="https://github.com/victorizbitskiy/aet/blob/main/docs/img/error.png"/>  
+</details>
+
+you can solve it like this:  
+
+<details>
+<base target="_blank">
+<summary>solution</summary>
+<img src="https://github.com/victorizbitskiy/aet/blob/main/docs/img/error_solution.png"/>  
+</details>
+  
+## Build
+  TODO
 
 
 
