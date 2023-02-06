@@ -56,6 +56,7 @@ $ expo start
 
 This is quite difficult for a beginner. Most likely you will have to spend more than one evening to do this. 
 But if you don't give up, I am sure that you will succeed. Here are the required steps that you will need to follow.  
+<br />
 To get the *.apk file, you will first need to create an [expo.dev](https://expo.dev) account.
 Then you need to add Credentials.
 To do this, you will need to create a keystore...
