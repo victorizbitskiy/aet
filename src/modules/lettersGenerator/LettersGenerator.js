@@ -8,11 +8,10 @@ export const LettersGenerator = () => {
   const [numberOfGroups, setNumberOfGroups] = useState(1)
 
   const getOptions = () => {
-    const russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
     const english = 'abcdefghijklmnopqrstuvwxyz'
-    const language = 'en' //$('input[name=language]:checked').val()
-    const letterCount = numberOfLetters //parseInt($('#letterCount').val())
-    const groupsCount = numberOfGroups //parseInt($('#groupsCount').val())
+    const language = 'en'
+    const letterCount = numberOfLetters
+    const groupsCount = numberOfGroups
 
     if (isNaN(letterCount)) {
       letterCount = 1;
@@ -23,7 +22,7 @@ export const LettersGenerator = () => {
     }
 
     return {
-      alphabet: language === 'ru' ? russian : english,
+      alphabet: english,
       letterCount: letterCount,
       groupsCount: groupsCount
     }
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
   },
   lettersView: {
     flex: 1,
-    flexWrap: 'wrap',
+//    flexWrap: 'wrap',
     padding: 15,
     height: '15%',
     width: '100%',
@@ -111,43 +110,37 @@ const styles = StyleSheet.create({
     flex: 1,
     flexWrap: 'wrap',
     flexShrink: 1,
+    height: '10%',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 32,
-    height: '10%',
     // overflow: 'scroll',
     padding: 10
   },
   lettersPlaceholder: {
-    color: 'gray'
+    color: 'gray',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   settingsView: {
     flex: 1,
-    // flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: 'black',
   },
   inputView: {
     alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: 'gray',
     width: '50%',
   },
   inputTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    // margin: 5,
     paddingBottom: 5,
   },
   input: {
-    // padding: 5,
     fontSize: 26,
     width: "15%",
-    // margin: 5,
     borderWidth: 1,
     borderColor: 'gray',
     alignItems: 'center'
