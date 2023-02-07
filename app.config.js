@@ -1,5 +1,5 @@
 module.exports = ({config}) => ({
-  name: config.name,
+  ...config,
   extra: {
     eas: {
       projectId: "7c940907-fbe8-4d30-bfe5-55637e6d8785",
