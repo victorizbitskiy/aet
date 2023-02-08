@@ -9,7 +9,6 @@ module.exports = ({config}) => ({
     package: "com.nameci.aet",
     versionCode: 1,
     adaptiveIcon: {
-      // foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#FFFFFF"
     }
   },

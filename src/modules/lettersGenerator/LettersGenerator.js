@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
   },
   lettersView: {
     flex: 1,
-//    flexWrap: 'wrap',
     padding: 15,
     height: '15%',
     width: '100%',
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 32,
-    // overflow: 'scroll',
     padding: 10
   },
   lettersPlaceholder: {
